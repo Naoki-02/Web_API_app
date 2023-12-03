@@ -1,0 +1,5 @@
+Django
+uwsgi
+PyMySQL
+requests
+python-dotenv
