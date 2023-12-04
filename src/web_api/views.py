@@ -9,11 +9,13 @@ from dotenv import load_dotenv
 class web_apiView(TemplateView):
     template_name="index.html"
 
+class list_View(TemplateView):
+    template_name="search.html"
+
 @method_decorator(require_http_methods(["GET"]), name='dispatch')
-class HotPepperGourmetSearchView(View):
+class HotPepperGourmetSearchView(TemplateView):
     def get(self, request):
         load_dotenv() # .envファイルから環境変数を読み込む
-        template_name = "base.html"
         url = 'https://webservice.recruit.co.jp/hotpepper/gourmet/v1/'
         params = {
             'key': os.getenv("HotPepperAPI"),

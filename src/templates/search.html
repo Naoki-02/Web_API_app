@@ -1,13 +1,17 @@
 <!-- index.html -->
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HotPepperGourmet Search Results</title>
-    
+</head>
+</head>
 <body>
     <h1>HotPepperGourmet Search Results</h1>
     <ul id="restaurantList"></ul>
+    <button id="loadDataButton">Load Data</button>
+    <script src="{% static 'js/listview.js' %}"></script>
 </body>
 </html>
