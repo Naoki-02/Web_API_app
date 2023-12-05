@@ -8,11 +8,11 @@ export function geoFindMe() {
         };
 
         const error = () => {
-            reject(new Error("Unable to retrieve your location"));
+            reject(new Error("現在地を取得できません。"));
         };
 
         if (!navigator.geolocation) {
-            reject(new Error("Geolocation is not supported in this browser"));
+            reject(new Error("このブラウザではサポートされていません"));
         } else {
             navigator.geolocation.getCurrentPosition(success, error);
         }

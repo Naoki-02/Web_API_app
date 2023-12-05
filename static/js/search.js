@@ -22,8 +22,7 @@ document.getElementById('searchForm').addEventListener('submit', async function 
             const listItem = document.createElement('li');
             listItem.innerHTML = `
                 <strong>${restaurant.name}</strong><br>
-                ジャンル: ${restaurant.genre.name}<br>
-                住所: ${restaurant.address}<br>
+                アクセス: ${restaurant.access}<br>
                 最寄り駅: ${restaurant.station_name}<br>
                 予算: ${restaurant.budget.name}<br>
                 <img src="${restaurant.photo.pc.l}" alt="${restaurant.name}" width="200"><br>
