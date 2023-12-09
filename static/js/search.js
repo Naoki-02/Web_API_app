@@ -1,6 +1,6 @@
 import { geoFindMe } from './geoFindMe.js';
 // search.js
-document.getElementById('searchForm').addEventListener('submit', async function (event) {
+document.getElementById('search-form-005').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     try {
