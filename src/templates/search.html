@@ -6,9 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HotPepperGourmet Search Results</title>
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
 </head>
 </head>
-<body>
+<body id="body">
     <h1>HotPepperGourmet Search Results</h1>
     <form id="searchForm">
         {% csrf_token %}
@@ -20,7 +21,7 @@
 
         <button type="submit">検索</button>
     </form>
-    <ul id="restaurantList"></ul>
+    <div id="restaurantList"></div>
     <script type="module" src="{% static 'js/search.js' %}"></script>
 </body>
 </html>

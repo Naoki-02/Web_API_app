@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+body {
+    background: rgba(251, 206, 131, 0.71);
+}
+
+#restaurantList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.restaurant-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.restaurant-container {
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .5); /* 影をつけて立体感 */
+    border-radius: 10px;
+    flex: 1 0 30%;
+    /* 30%の幅で横並び、余白を考慮 */
+    min-width: 0;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border: 5px solid #f99e48;
+    background: rgba(250, 171, 120, 0.50);
+}
+
+.name_border {
+    background: #000;
+    height: 1.5px;
+    margin-bottom: 20px ;
+}
+
+.restaurant_name {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.restaurant_status{
+    text-align: left;
+    line-height: 23px; /* 文字上下間隔調整 */
+}
