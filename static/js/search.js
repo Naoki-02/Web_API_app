@@ -7,9 +7,22 @@ document.getElementById('search-form-005').addEventListener('submit', async func
         const { latitude, longitude } = await geoFindMe();
         const keyword = document.getElementById('keyword').value;
         const range = document.getElementById('range').value;
+        const free_food = document.getElementById('free_food').checked ? 1 : 0;
+        const private_room = document.getElementById('private_room').checked ? 1 : 0;
+        const card = document.getElementById('card').checked ? 1 : 0;
+        const english = document.getElementById('english').checked ? 1 : 0;
+        const child = document.getElementById('child').checked ? 1 : 0;
+        const parking = document.getElementById('parking').checked ? 1 : 0;
+
+        // console.log(free_food);
+        // console.log(private_room);
+        // console.log(card);
+        // console.log(english);
+        // console.log(child);
+        // console.log(parking);
 
         // AJAXリクエストを使用してDjangoのViewからデータを取得
-        const url = `/hotpepper/search/?keyword=${keyword}&range=${range}&latitude=${latitude}&longitude=${longitude}`;
+        const url = `/hotpepper/search/?keyword=${keyword}&range=${range}&latitude=${latitude}&longitude=${longitude}&free_food=${free_food}&private_room=${private_room}&card=${card}&english=${english}&child=${child}&parking=${parking}`;
 
         const response = await fetch(url);
         const data = await response.json();

@@ -4,7 +4,7 @@ body {
     background: rgba(251, 206, 131, 0.71);
 }
 
-#midashi{
+#midashi {
     margin-left: 50px;
 }
 
@@ -14,7 +14,7 @@ body {
     padding: 20px;
 }
 
-#range{
+#range {
     width: 100px;
     height: 70px;
     padding: 5px 15px;
@@ -33,7 +33,8 @@ body {
 
 .restaurant-container {
     box-sizing: border-box;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .5); /* 影をつけて立体感 */
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .5);
+    /* 影をつけて立体感 */
     border-radius: 10px;
     flex: 1 0 30%;
     /* 30%の幅で横並び、余白を考慮 */
@@ -48,7 +49,7 @@ body {
 .name_border {
     background: #000;
     height: 1.5px;
-    margin-bottom: 20px ;
+    margin-bottom: 20px;
 }
 
 .restaurant_name {
@@ -61,10 +62,11 @@ body {
     line-height: normal;
 }
 
-.restaurant_status{
+.restaurant_status {
     font-size: 14px;
     text-align: left;
-    line-height: 23px; /* 文字上下間隔調整 */
+    line-height: 23px;
+    /* 文字上下間隔調整 */
 }
 
 .search-form-005 {
@@ -109,4 +111,104 @@ body {
     background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23fff%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E');
     background-repeat: no-repeat;
     content: '';
+}
+
+.control-box{
+    padding: 10px;
+}
+
+.control-group {
+    display: flex;
+    text-align: left;
+    padding-top: 20px;
+    width: 500px;
+    height: 140px;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+}
+
+.control--radio .control__indicator {
+    border-radius: 50%;
+}
+
+.control:hover input~.control__indicator,
+.control input:focus~.control__indicator {
+    background: #ccc;
+}
+
+.control input:checked~.control__indicator {
+    background: #f99e48;
+}
+
+.control:hover input:not([disabled]):checked~.control__indicator,
+.control input:checked:focus~.control__indicator {
+    background: #f99e48;
+}
+
+.control input:disabled~.control__indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.control__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.control input:checked~.control__indicator:after {
+    display: block;
+}
+
+.control--checkbox .control__indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.control--checkbox input:disabled~.control__indicator:after {
+    border-color: #7b7b7b;
+}
+
+.control--radio .control__indicator:after {
+    left: 7px;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.control--radio input:disabled~.control__indicator:after {
+    background: #7b7b7b;
 }

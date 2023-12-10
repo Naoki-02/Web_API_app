@@ -25,6 +25,12 @@ class HotPepperGourmetSearchView(TemplateView):
         range_value = request.GET.get('range', '5')
         latitude = request.GET.get('latitude')
         longitude=request.GET.get('longitude')
+        free_food=request.GET.get('free_food')
+        private_room=request.GET.get('private_room')
+        card=request.GET.get('card')
+        english=request.GET.get('english')
+        child=request.GET.get('child')
+        parking=request.GET.get('parking')
         
         
         params = {
@@ -34,6 +40,12 @@ class HotPepperGourmetSearchView(TemplateView):
             'range': range_value,
             'lat' : latitude,
             'lng' : longitude,
+            'free_food' : free_food,
+            'private_room' : private_room,
+            'card' : card,
+            'english' : english,
+            'child' : child,
+            'parking' : parking,
             'count' : "21",
         }
         response = requests.get(url, params=params)
