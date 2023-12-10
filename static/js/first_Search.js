@@ -1,12 +1,11 @@
 import { geoFindMe } from './geoFindMe.js';
 
-document.getElementById('search-form-005').addEventListener('submit', async function (event) {
-    event.preventDefault();
-
+document.addEventListener('DOMContentLoaded', async function () {
     try {
         const { latitude, longitude } = await geoFindMe();
+        
         const keyword = document.getElementById('keyword').value;
-        const range = document.getElementById('range').value;
+        const range = 5;
 
         // AJAXリクエストを使用してDjangoのViewからデータを取得
         const url = `/hotpepper/search/?keyword=${keyword}&range=${range}&latitude=${latitude}&longitude=${longitude}`;
@@ -35,7 +34,6 @@ document.getElementById('search-form-005').addEventListener('submit', async func
             </div>
             
             `;
-
             // クリック時の処理を追加
             listItem.querySelector('.restaurant-link').addEventListener('click', function (clickEvent) {
                 clickEvent.preventDefault();
@@ -49,7 +47,7 @@ document.getElementById('search-form-005').addEventListener('submit', async func
                 // 現在のURLに "detail" が含まれていた場合に遷移
                 if (currentUrl.includes('restaurant-detail')) {
                     window.location.href = currentUrl;
-                }else{
+                } else {
                     window.location.href = 'restaurant-detail/';
                 }
             });

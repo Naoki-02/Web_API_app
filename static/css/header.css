@@ -4,6 +4,10 @@ body {
     background: rgba(251, 206, 131, 0.71);
 }
 
+#midashi{
+    margin-left: 50px;
+}
+
 #restaurantList {
     display: flex;
     flex-wrap: wrap;
@@ -12,7 +16,7 @@ body {
 
 #range{
     width: 100px;
-    height: 45px;
+    height: 70px;
     padding: 5px 15px;
     border: none;
     border-radius: 3px 0 0 3px;
@@ -51,13 +55,14 @@ body {
     color: #000;
     text-align: center;
     font-family: Inter;
-    font-size: 24px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .restaurant_status{
+    font-size: 14px;
     text-align: left;
     line-height: 23px; /* 文字上下間隔調整 */
 }
@@ -71,8 +76,8 @@ body {
 }
 
 .search-form-005 input {
-    width: 250px;
-    height: 45px;
+    width: 400px;
+    height: 70px;
     padding: 5px 15px;
     border: none;
     border-radius: 3px 0 0 3px;
@@ -91,7 +96,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 50px;
-    height: 45px;
+    height: 70px;
     border: none;
     border-radius: 0 3px 3px 0;
     background-color: #f99e48;

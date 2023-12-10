@@ -1,15 +1,14 @@
 <!-- detail.html -->
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block header %}
     <title>レストランの詳細情報</title>
-</head>
-<body>
-    <h1>レストランの詳細情報</h1>
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock %}
+{% block content %}
+    {% include "header.html" %}
+    <h2 id="midashi2">レストランの詳細情報</h2>
     <div id="restaurantDetails"></div>
     <script type="module" src="{% static 'js/detail.js' %}"></script>
-</body>
-</html>
+    {% include "footer.html" %}
+{% endblock content %}
