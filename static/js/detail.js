@@ -13,12 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
             // 詳細情報を表示
             const restaurantDetails = document.getElementById('restaurantDetails');
             restaurantDetails.innerHTML = `
+                <img src="${restaurantData.photo.pc.l}" alt="${restaurantData.name}" width="200"><br>
                 <strong>${restaurantData.name}</strong><br>
+                <div class="name_border"></div>
                 予算: ${restaurantData.budget.name}<br>
                 住所: ${restaurantData.address}<br>
                 アクセス: ${restaurantData.access}<br>
                 営業時間: ${restaurantData.open}<br>
-                <img src="${restaurantData.photo.pc.l}" alt="${restaurantData.name}" width="200"><br>
+                
                 <a href="${restaurantData.urls.pc}" target="_blank">クーポンを見る</a>
             `;
             console.log(restaurantData.open)

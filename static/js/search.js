@@ -44,7 +44,14 @@ document.getElementById('search-form-005').addEventListener('submit', async func
                 document.cookie = `restaurantData=${JSON.stringify(restaurant)}; path=/`;
 
                 // ページ遷移
-                window.location.href = 'restaurant-detail/';
+                const currentUrl = window.location.href;
+
+                // 現在のURLに "detail" が含まれていた場合に遷移
+                if (currentUrl.includes('restaurant-detail')) {
+                    window.location.href = currentUrl;
+                }else{
+                    window.location.href = 'restaurant-detail/';
+                }
             });
 
             restaurantList.appendChild(listItem);

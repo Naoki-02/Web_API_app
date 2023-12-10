@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+#restaurantDetails {
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .5); /* 影をつけて立体感 */
+    border-radius: 10px;
+    flex: 1 0 30%;
+    /* 30%の幅で横並び、余白を考慮 */
+    min-width: 0;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border: 5px solid #f99e48;
+    background: rgba(250, 171, 120, 0.50);
+}
+
+#restaurantDetails img {
+    max-width: 100%;
+    height: auto;
+}
