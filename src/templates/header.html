@@ -8,10 +8,51 @@
             <input type="text" id="keyword" placeholder="キーワードを入力">
         </label>
         <label for="range">
-            <input type="number" placeholder="範囲" id="range" class="inputForm" name="range" required>
+            <select id="range" name="range">
+                <option value="1">300m内</option>
+                <option value="2">500m内</option>
+                <option value="3" selected>1km内</option>
+                <option value="4">2km内</option>
+                <option value="5">3km</option>
+            </select>
+            {% comment %} <input type="number" placeholder="範囲" id="range" class="inputForm" name="range" required> {% endcomment %}
         </label>
         <button type="submit" aria-label="検索"></button>
+
+        <div class="control-group">
+            <div class="control-box">
+                <label class="control control--checkbox">食べ放題
+                <input type="checkbox" id="free_food"/>
+                <div class="control__indicator"></div>
+                </label>
+                <label class="control control--checkbox">個室あり
+                <input type="checkbox" id="private_room"/>
+                <div class="control__indicator"></div>
+                </label>
+            </div>
+            <div class="control-box">
+                <label class="control control--checkbox">カード可
+                <input type="checkbox" id="card"/>
+                <div class="control__indicator"></div>
+                </label>
+                <label class="control control--checkbox">英語メニューあり
+                <input type="checkbox" id="english"/>
+                <div class="control__indicator"></div>
+                </label>
+            </div>
+            <div class="control-box">
+                <label class="control control--checkbox">お子様連れOK
+                <input type="checkbox" id="child"/>
+                <div class="control__indicator"></div>
+                </label>
+                <label class="control control--checkbox">駐車場あり
+                <input type="checkbox" id="parking"/>
+                <div class="control__indicator"></div>
+                </label>
+            </div>
+        </div>
     </form>
+    
     <div id="restaurantList"></div>
     <script type="module" src="{% static 'js/search.js' %}"></script>
 </header>

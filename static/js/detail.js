@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     try {
         // JSONデータをオブジェクトにパース
         const restaurantData = JSON.parse(CookieValue);
-        console.log("restaurantData:", restaurantData);
+        // console.log("restaurantData:", restaurantData);
 
         if (restaurantData) {
             // 詳細情報を表示
