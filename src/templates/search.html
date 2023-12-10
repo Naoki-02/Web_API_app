@@ -1,9 +1,11 @@
 <!-- search.html -->
 {% extends 'base.html' %}
+{% load static %}
 
 {% block header %}
     <title>グルメサーチ</title>
 {% endblock %}
 {% block content %}
     {% include "header.html" %}
+    <script type="module" src="{% static 'js/first_Search.js' %}"></script>
 {% endblock content %}

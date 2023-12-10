@@ -21,8 +21,8 @@ class HotPepperGourmetSearchView(TemplateView):
         load_dotenv() # .envファイルから環境変数を読み込む
         url = 'https://webservice.recruit.co.jp/hotpepper/gourmet/v1/'
         
-        keyword = request.GET.get('keyword', 'ラーメン')
-        range_value = request.GET.get('range', '3')
+        keyword = request.GET.get('keyword')
+        range_value = request.GET.get('range', '5')
         latitude = request.GET.get('latitude')
         longitude=request.GET.get('longitude')
         

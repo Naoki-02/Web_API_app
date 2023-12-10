@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+#midashi2{
+    margin-left: 60px;
+}
+
 #restaurantDetails {
     box-sizing: border-box;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .5); /* 影をつけて立体感 */
@@ -8,13 +12,90 @@
     /* 30%の幅で横並び、余白を考慮 */
     min-width: 0;
     padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
     margin: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
     text-align: center;
     border: 5px solid #f99e48;
-    background: rgba(250, 171, 120, 0.50);
+    background: rgba(255, 187, 142, 0.5);
 }
 
 #restaurantDetails img {
+    width: 450px;
     max-width: 100%;
     height: auto;
+    text-align: center;
+}
+
+#catch{
+    font-size: 22px;
+    text-align: center;
+}
+
+#access{
+    font-size: 17px;
+    text-align: left;
+}
+
+#link{
+    text-align: right;
+}
+
+.list-006 {
+    list-style-type: none;
+}
+
+.list-006 li {
+    margin-bottom: 5px;
+    padding: .5em .7em;
+    border-left: 5px solid #f99e48;
+    background-color: rgba(255, 236, 202, 0.71);
+    font-weight: 600;
+}
+
+.heading-016 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333333;
+}
+
+.heading-016::before,
+.heading-016::after {
+    width: 3px;
+    height: 40px;
+    background-color: #f99e48;
+    content: '';
+}
+
+.heading-016::before {
+    transform: rotate(-35deg);
+    margin-right: 30px;
+}
+
+.heading-016::after {
+    transform: rotate(35deg);
+    margin-left: 30px;
+}
+
+.button-028 {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f99e48;
+}
+
+.button-028:hover {
+    border: 1px solid #f99e48;
+    background-color: #fff;
+}
+
+.button-028:hover path {
+    fill: #f99e48;
 }
