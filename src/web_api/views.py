@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.http import require_http_methods
-from django.views.generic import FormView, TemplateView
+from django.views.generic import DetailView, FormView, TemplateView
 from dotenv import load_dotenv
 
 
@@ -14,18 +14,6 @@ class web_apiView(TemplateView):
 
 class list_View(TemplateView):
     template_name="search.html"
-    # success_url="index.html"
-    
-    # def form_valid(self, form):
-    #     # フォームが有効な場合の処理
-    #     input_text = form.cleaned_data['subject']
-    #     input_number = form.cleaned_data['range']
-
-    #     # HotPepperGourmetSearchViewに渡すためにセッションに保存
-    #     self.request.session['hotpepper_keyword'] = input_text
-    #     self.request.session['hotpepper_range'] = input_number
-
-    #     return super().form_valid(form)
 
 @method_decorator(require_http_methods(["GET"]), name='dispatch')
 class HotPepperGourmetSearchView(TemplateView):
@@ -46,8 +34,12 @@ class HotPepperGourmetSearchView(TemplateView):
             'range': range_value,
             'lat' : latitude,
             'lng' : longitude,
+            'count' : "21",
         }
         response = requests.get(url, params=params)
         data = response.json()
         # 取得したデータを処理するコードを追加する
         return JsonResponse(data)
+    
+class RestaurantDetailView(TemplateView):
+    template_name = 'detail.html'  # 使用するテンプレートの名前

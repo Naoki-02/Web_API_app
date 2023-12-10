@@ -6,21 +6,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HotPepperGourmet Search Results</title>
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
 </head>
 </head>
-<body>
+<body id="body">
     <h1>HotPepperGourmet Search Results</h1>
-    <form id="searchForm">
+    <form id="search-form-005" class="search-form-005">
         {% csrf_token %}
-        <label for="keyword">キーワード：</label>
-        <input type="text" id="keyword" name="keyword" required><br>
-
-        <label for="range">範囲：</label>
-        <input type="number" id="range" name="range" required><br>
-
-        <button type="submit">検索</button>
+        <label>
+            <input type="text" id="keyword" placeholder="キーワードを入力">
+        </label>
+        <label for="range">
+            <input type="number" placeholder="範囲" id="range" class="inputForm" name="range" required>
+        </label>
+        <button type="submit" aria-label="検索"></button>
     </form>
-    <ul id="restaurantList"></ul>
+
+    {% comment %} <form class="searchForm">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="keyword">
+                <input type="text" placeholder="キーワードを入力" id="keyword" class="inputForm" name="keyword" required>
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="range">範囲：</label>
+            <input type="number" id="range" class="inputForm" name="range" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" aria-label="検索">検索</button>
+        </div>
+    </form> {% endcomment %}
+    <div id="restaurantList"></div>
     <script type="module" src="{% static 'js/search.js' %}"></script>
 </body>
 </html>

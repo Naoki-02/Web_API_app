@@ -1,6 +1,6 @@
 import { geoFindMe } from './geoFindMe.js';
 // search.js
-document.getElementById('searchForm').addEventListener('submit', async function (event) {
+document.getElementById('search-form-005').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     try {
@@ -10,7 +10,7 @@ document.getElementById('searchForm').addEventListener('submit', async function 
 
         // AJAXリクエストを使用してDjangoのViewからデータを取得
         const url = `/hotpepper/search/?keyword=${keyword}&range=${range}&latitude=${latitude}&longitude=${longitude}`;
-        
+
         const response = await fetch(url);
         const data = await response.json();
 
@@ -19,15 +19,34 @@ document.getElementById('searchForm').addEventListener('submit', async function 
         restaurantList.innerHTML = ''; // 以前の結果をクリア
 
         data.results.shop.forEach(restaurant => {
-            const listItem = document.createElement('li');
+            const listItem = document.createElement('div');
+            listItem.classList.add('restaurant-container'); // クラスを追加
             listItem.innerHTML = `
-                <strong>${restaurant.name}</strong><br>
-                アクセス: ${restaurant.access}<br>
-                最寄り駅: ${restaurant.station_name}<br>
-                予算: ${restaurant.budget.name}<br>
+            <div class="restaurant-link" data-restaurant-id="${restaurant.id}">
                 <img src="${restaurant.photo.pc.l}" alt="${restaurant.name}" width="200"><br>
-                <a href="${restaurant.urls.pc}" target="_blank">詳細情報</a>
+                <strong class="restaurant_name">${restaurant.name}</strong><br>
+            </div>
+            <div class="name_border"></div>
+            <div class="restaurant_status">
+                アクセス: ${restaurant.access}<br>
+                <br>
+                予算: ${restaurant.budget.name}<br>
+                営業: ${restaurant.open}<br>
+            </div>
+            
             `;
+
+            // クリック時の処理を追加
+            listItem.querySelector('.restaurant-link').addEventListener('click', function (clickEvent) {
+                clickEvent.preventDefault();
+
+                // クッキーにJSONデータを保存
+                document.cookie = `restaurantData=${JSON.stringify(restaurant)}; path=/`;
+
+                // ページ遷移
+                window.location.href = 'restaurant-detail/';
+            });
+
             restaurantList.appendChild(listItem);
         });
     } catch (error) {
