@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<header>
+    <h1>グルメ検索</h1>
+    <form id="search-form-005" class="search-form-005">
+        {% csrf_token %}
+        <label>
+            <input type="text" id="keyword" placeholder="キーワードを入力">
+        </label>
+        <label for="range">
+            <input type="number" placeholder="範囲" id="range" class="inputForm" name="range" required>
+        </label>
+        <button type="submit" aria-label="検索"></button>
+    </form>
+    <div id="restaurantList"></div>
+    <script type="module" src="{% static 'js/search.js' %}"></script>
+</header>

@@ -1,13 +1,16 @@
-<!-- index.html -->
+<!-- base.html -->
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HotPepperGourmet Search Results</title>
-    
-<body>
-    <h1>HotPepperGourmet Search Results</h1>
-    <ul id="restaurantList"></ul>
-</body>
+{% load static %}
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block header %}
+        {% endblock %}
+    </head>
+
+    <body>
+    {% block content %}
+    {% endblock content %}
+    </body>
 </html>
